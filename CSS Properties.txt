@@ -1,0 +1,68 @@
+Width - This property is used to specify the width of an element.
+Height - This property is used to specify the height of an element.
+
+Background-color - This property is used to set background color to webpage.
+Background-image - This property is used to set background image to webpage.
+Background-position - This property is used to set background image position either left, right or center.
+Background-repeat - This property is used to set background image to no repeat.
+Background-size - This property is used to set background color or image for our size.
+Background-attachment - This property is used to set background image as fixed or scroll.
+Background - This is a short hand property defines a variety of background properties within one declaration.
+
+Border-style - Using this property we can set the border as solid,dotted,dashed, groove or double.
+Border-color - Using this property we can set the border color as we want by giving color code or color name.
+Border-width - Using this property we can set the border width.
+Border-radius - Using this property we can set the border edges as round, curve etc
+border-collapse - this property specifies table cell borders are connected or separated.
+
+Outline-style - Using this property we can set the outine style as solid,dotted,dashed, groove or double.
+Outline-color - Using this property we can set the outline color as we want by giving color code or color name.
+Outline-width - Using this property we can set the outline width.
+Outline-offset - Using this property we can set the space between an outline and the border edge of an element.
+
+padding-left - Using this property we can give space between its content and its border in left side.  
+padding-top -  Using this property we can give space between its content and its border in top side.  
+padding-right -  Using this property we can give space between its content and its border in right side.  
+padding-bottom -Using this property we can give space between its content and its border in bottom side.  
+padding -   this is a short hand property and It sets the padding on all four sides of the element.
+
+Margin-left  - Using this property we can create space around elements, outside of any defined borders in left side.
+Margin-top  - Using this property we can create space around elements, outside of any defined borders in left side.
+Margin-right  - Using this property we can create space around elements, outside of any defined borders in left side.
+Margin-bottom - Using this property we can create space around elements, outside of any defined borders in left side.
+Margin - this is a short hand property and It sets the margin on all four sides of the element.
+
+Font-style - This property used to set font style.
+Font-family - This property used to set font family.
+Font-size - This property used to set font size.
+Font-weight - This property used to set font weight like bolder or lighter.
+Font - This property is used to defines a variety of font properties within one declaration.
+
+Text-decoration - This property is used to give underline,overline,linethrough or none for the text.
+Text-transform - This property is used to set the text in uppercase, lowercase or Capitalize
+Text-align - This is property is used to set the text in left, right, center position.
+
+Transform - This property applies a 2D or 3D transformation to an element.
+Transform - This property is used to rotate elements in 360deg.
+
+Transition - This property allows to change property values, over a given duration.
+Transition-delay - This property allows to change property values after some times.
+transition-duration - This property allows to stay the property for given duration.
+
+Float -  This property is used to specifies how an element should float either left or right direction or none .  
+
+Column-span - This property specifies how many columns an element spans across in a multi-column layout.
+Row-span - This property specifies how many rows an element spans across in a multi-column layout. 
+
+Color - This property is used to specify the color of the text of an element.
+Opacity - This property is used to specifies the transparency of an element. 
+
+List-style - This property displays style for a list and list elements.
+list-style-type - This property specifies the style for a list-item.
+
+Animation-name - This property is used to specify the name of @keyframes defined animations that should be applied to the selected element.
+Animation-duration - This property is used to specify the number of seconds or milliseconds an animation and its a mandotaryA property if animation is using.
+Animation-iteration-count  - This property is used to specify the number of times an animation cycle should be played before stopping or infinite times.
+Animation-name - This propert specifies when the animation will start.
+
+Overflow - This property sets what to do when an elemnts content is too big to fit its block formatting context i.e Visible, hidden, scroll, auto.
