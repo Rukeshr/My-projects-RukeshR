@@ -1,0 +1,41 @@
+form{
+    border: 1px solid black;
+    width: 300px;
+    height: 300px;
+    margin: 52px;
+    border-radius: 5px;
+    text-align: center;
+    background-color: grey;
+    margin-left:380px;
+}
+input[type="text"], input[type="password"]{
+    width: 100px;
+    height: 20px;
+    border: 1px solid red;
+    border-radius: 10px;
+    outline: none;
+    text-align: center;
+    font-size: 15px;
+    font-family: cursive;
+    margin:10px;
+}
+input[type="submit"]{
+    width: 100px;
+    height: 30px;
+    margin: 10px;
+    border: 1px solid red;
+    border-radius: 10px;
+    font-size: 15px;
+    padding:1px;
+    color: red;
+}
+body{
+   background-image: url('/image/cat.webp');
+   background-size: cover;
+   background-repeat: no-repeat; 
+   text-align: center;
+}
+input[type="submit"]:hover{
+    background-color: rgb(175, 175, 33);
+    
+}
