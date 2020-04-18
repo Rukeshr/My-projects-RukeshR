@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Paaji+2&display=swap');
+ *{
+    margin: 0;
+    padding: 0;
+    font-family: 'Baloo Paaji 2', cursive;
+  }
+  body{ 
+    background: #4d5861; 
+    background: -webkit-linear-gradient(to right, #d7d2cc, #4d5861);  
+    background: linear-gradient(to right, #d7d2cc, #4d5861);
+  }
+  .header{
+    background: #ebebeb;
+    color: black;
+    height: 100px;
+    padding: 0 20px;
+  }
+  
+  .menu{
+    float: right;
+    font-size: 19px;
+    line-height: 100px;
+  }
+  .menu a{
+    color: black;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 0 10px;
+    transition: 0.4s;
+  }
+
+   a:hover{
+    color: #379ee2;
+  }
+
+  .middle{
+     margin-left: 215px;
+     font-size: 25px;
+  }
+  
+ .button{
+     margin-right:2%;
+     text-align: right;
+ } 
+
+  span:before{
+  text-shadow: 2px 2px rgb(184, 184, 184);
+  line-height: 100px;
+  font-size: 30px;
+  padding-left: 2%;
+  float: left;
+  content: '';
+  animation: animate infinite 6s;
+  }
+
+    @keyframes animate {
+  
+  10%{
+    content: 'R';
+  }
+  20%{
+    content: '__u';
+  }
+  30%{
+    content:'___k';		 
+  }
+    40%{
+    content:'____e';		 
+  }
+    50%{
+    content:'_____s';		 
+  }
+    60%{
+    content:'______h';		 
+  }
+    70%{
+    content:'_______r';		 
+  }
+    80%{
+    content:'Rukesh r';		 
+  }
+  
+}

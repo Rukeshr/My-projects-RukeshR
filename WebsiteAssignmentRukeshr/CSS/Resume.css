@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Paaji+2&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+}
+
+body {
+  background: #e6e3e3;
+  font-size: 14px;
+  line-height: 22px;
+  color: #050505;
+  font-family: 'Baloo Paaji 2', cursive;
+}
+
+.bold {
+  font-weight: 700;
+  font-size: 20px;
+  text-transform: uppercase;   
+}
+
+.semi-bold {
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.resume {
+  width: 850px;
+  height: 650px;
+  display: flex;
+  margin: 50px auto;
+}
+
+.resume .resumeleft {
+  width: 280px;
+  background: #9d9fa0;
+}
+
+.resume .resumeleft .resumeprofile {
+  width: 100%;
+  height: 280px;
+}
+
+.resume .resumeleft .resumeprofile img {
+  width: 100%;
+  height: 100%;
+}
+
+.resume .resumeleft .resume_content {
+  padding: 0 25px;
+}
+
+.resume .title {
+  margin-bottom: 20px;
+}
+
+.resume .resumeleft .bold {
+  color: rgb(0, 0, 0);
+}
+
+.resume .resume_item {
+  padding: 25px 0;
+  border-bottom: 2px solid #d1d3d3;
+}
+
+.resume .resumeleft .semi-bold {
+  color: #fff;
+  margin-bottom: 3px;
+}
+
+.resume .resume_right {
+  width: 520px;
+  background: rgb(236, 236, 236);
+  padding: 25px;
+}
+
+.resume .resume_right .bold {
+  color: #121213;
+}
+
+.resume .resume_right ul li .date {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+
+.resume .resume_right ul li .info {
+  margin-bottom: 20px;
+}
+
+
+
+
