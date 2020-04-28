@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Carter+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Paaji+2&display=swap');
+
+body{ 
+    background: #6c7277;
+    color: black; 
+    background: -webkit-linear-gradient(to right, #d7d2cc, #656e75);  
+    background: linear-gradient(to right, #d7d2cc, #656e75);
+    font-family: 'Manrope', sans-serif;
+  }
+  .navbar{
+    background: #ebebeb;
+    color: black;
+    font-size: 20px;
+    padding: 25px; 
+  }
+  .navbar-brand{
+    font-size: 22px;
+  }
+  .middle{
+    margin-left: 215px;
+    font-size: 25px;
+ }
+ .social{
+   margin-top: 0.7%;
+   margin-right:2.2%;
+   text-align: right;
+}
+ h2, p{
+  font-family: 'Baloo Paaji 2', cursive;
+}
+
+span:before{
+  content: '';
+  font-family: 'Carter One', cursive;
+  font-weight: 200;
+  font-size: 23px;
+  animation: animate infinite 6s;
+  }
+
+    @keyframes animate {
+ 
+  10%{
+    content: 'R';
+  }
+  20%{
+    content: '_u';
+  }
+  30%{
+    content:'__k';		 
+  }
+    40%{
+    content:'___e';		 
+  }
+    50%{
+    content:'____s';		 
+  }
+    60%{
+    content:'_____h';		 
+  }
+    70%{
+    content:'_______r';		 
+  }
+    80%{
+    content:'Rukesh r';		 
+  }
+  
+}
