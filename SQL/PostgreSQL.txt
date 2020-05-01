@@ -1,0 +1,58 @@
+select version(); = to know the version of postgrsql.
+\l = command to get a list of all available databases.
+\c <database_name> ex: [\c idexcel_db] = Suppose, you want to switch to a database.
+\d <table_name> = to describe a particular table.
+\? = You can get the list of all the available commands.
+
+create database db_name;
+ex : create database idexcel_db;
+
+go into idexcel database = \c idexcel_db
+
+create table table_name (col_name1 datatype constraints,
+		         col_name2 datatype constraints,
+			 col_name3 datatype constraints,..
+			 col_name n datatype constraints);
+
+ex: create table Employee( id int primary key,
+			   name varchar(100),
+			   mobile double precision,
+			   salary double precision);
+
+to check if table is created successfully by giving ( \d)(\d table_name)
+
+insert into table (column1,column2,column3,....coulumnN) 
+		  values (value1,value2,value3...valueN);
+
+ex:create table Employee( id,name,mobile,salary) values 
+		         (01,'name',8880031699,25000);   
+
+to add new column to the existing table
+alter table table_name add column new_col_name datatype;
+
+ex: alter table Employee add age int;
+
+to change the column old_name to new_name
+alter table table_name rename column col_name to new_col_name;
+
+ex: alter table employee rename column id to empid; 
+ 
+to rename the table name 
+firstly go back postgres database by giving the command (\c postgres)
+and 
+alter table old_name rename to new_name
+
+ex: alter table Employee rename to NewTable;
+
+to drop(delete) a particular column
+alter table table_name drop column_name
+
+ex: alter table newtable drop age;
+
+to drop a table
+drop table table_name;
+
+drop table newtable;
+
+
+
