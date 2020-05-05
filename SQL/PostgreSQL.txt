@@ -1,58 +1,143 @@
-select version(); = to know the version of postgrsql.
-\l = command to get a list of all available databases.
-\c <database_name> ex: [\c idexcel_db] = Suppose, you want to switch to a database.
-\d <table_name> = to describe a particular table.
-\? = You can get the list of all the available commands.
+======PostgrSQL======
 
-create database db_name;
-ex : create database idexcel_db;
+1. Write a command to check the version of postgrSQL.
+   select version(); 
 
-go into idexcel database = \c idexcel_db
+2. Write a command to get a list of all available databases.
+   \l
 
-create table table_name (col_name1 datatype constraints,
-		         col_name2 datatype constraints,
-			 col_name3 datatype constraints,..
-			 col_name n datatype constraints);
+4. Write a command to create a database.
+   create database db_name;
+   ex : create database idexcel_db;
 
-ex: create table Employee( id int primary key,
-			   name varchar(100),
-			   mobile double precision,
-			   salary double precision);
-
-to check if table is created successfully by giving ( \d)(\d table_name)
-
-insert into table (column1,column2,column3,....coulumnN) 
-		  values (value1,value2,value3...valueN);
-
-ex:create table Employee( id,name,mobile,salary) values 
-		         (01,'name',8880031699,25000);   
-
-to add new column to the existing table
-alter table table_name add column new_col_name datatype;
-
-ex: alter table Employee add age int;
-
-to change the column old_name to new_name
-alter table table_name rename column col_name to new_col_name;
-
-ex: alter table employee rename column id to empid; 
+3. Write a command to use or switch to a particular database.
+   \c <database_name>
+   ex : \c idexcel_db
  
-to rename the table name 
-firstly go back postgres database by giving the command (\c postgres)
-and 
-alter table old_name rename to new_name
+4. Write a command to create a table.
+   create table table_name (col_name1 datatype constraints,
+		            col_name2 datatype constraints,
+			    col_name3 datatype constraints,...
+			    col_namen datatype constraints);
 
-ex: alter table Employee rename to NewTable;
+   ex : create table Employee( id int primary key,
+			       name varchar(100),
+			       mobile double precision,
+			       salary double precision);
 
-to drop(delete) a particular column
-alter table table_name drop column_name
+5.  Write a command to describe a particular table.
+    \d <table_name>
+	
+6.  \? = You can get the list of all the available commands.
 
-ex: alter table newtable drop age;
+7. Write a query to insert a values to the table.
+   Insert into table (column1,column2,column3,....coulumnN) 
+	             values (value1,value2,value3...valueN);
 
-to drop a table
-drop table table_name;
+   ex:create table Employee( id,name,mobile,salary) values 
+		           (01,'name',8880031699,25000);   
 
-drop table newtable;
+8. Write a command to add new column to the existing table.
+   Syntax : alter table table_name add column new_col_name datatype;
+
+   ex: alter table Employee add age int;
+
+9. Write a command to change the column old_name to new_name
+   Syntax :   alter table table_name rename column col_name to new_col_name;
+
+   ex: alter table employee rename column id to empid; 
+
+10. Write a command to rename the database name
+    firstly go back postgres database by giving the command (\c postgres)
+    and alter database old_name rename to new_name
+
+    ex: alter database Employee rename to Newdatabase; 
+ 
+11. Write a command to rename the table name 
+    firstly go back postgres database by giving the command (\c postgres)
+    and alter table old_name rename to new_name
+
+    ex: alter table Employee rename to NewTable;
+
+12. WAQ to drop(delete) a particular column
+    Syntax :  alter table table_name drop column_name
+
+    ex: alter table newtable drop age;
+
+13. WAQ to drop(delete) a table
+    Syntax : drop table table_name;
+
+    drop table newtable;
+
+14. WAQ to display ename,departmentno and hiredate.
+    select ename,deptno,hiredate from employee;
+
+15. WAQ to display ename. 
+    select ename from employee;
+
+16. WAQ to display all the elements in a table.
+    select * from employee;
+
+17. update : update tab_name set col_name=value;
+    delete : delete from tab_name;
+
+18. Where clause : used to filter records.
+
+19. Order of excuetion :
+	From
+	where : row by row will execute and it check with the conditions given and filter out the results. 
+	select
+
+20. WAQ to update salary whose id is 1.
+    update employee set salary=25000 where empid=1;
+
+21. Delete from employee where empid=10;
+
+22. WAQ to insert 2 values in a same query? 
+    insert into employee (empid,ename,salary,designation,hiredate,age,email,deptno,mobile) values 
+    (11,'abc',25000,'software','2015-03-14',24,'abc@gmail.com',10,1234567890),
+    (12,'xyz',25000,'software','2015-03-14',24,'xyz@gmail.com',10,1234567890);
+
+====================================================================================================
+
+    WAQ to delete a record whose id is 12
+    delete from employee where empid=12;
+
+    Expression : Consists of operators and operands
+ 	     is a statement which gives results
+    operands : 1> Column_name
+	       2> Literals
+alias 
+
+Syntax : Select col_name as alias_name from table_name as alias_name;
+	 Select col_name alias_name from table_name alias_name;  
+	
+	 WAQ to change a colname as job title for temporary.
+         select designation as job_title from employee;
+	
+	 WAQ to obtain emp name with his current salary and new salary with a hike of 5%
+         select ename,salary,(salary+(Salary*15/100)) as Hike from employee;
+
+	 WAQ to display all the emp records incremented with 500 rs each employee
+         update employee set salary=salary+500; (or)
+	 select ename,salary,salary+500 as Hike from employee;
+ 
+	 WAQ to display all the emp records decremented with 500 rs each employee
+         update employee set salary=salary+500; (or)
+	 select ename,salary,salary-500 as Hike from employee;
+
+	 WAQ to display name,salary and annual sal of all the employee
+         select ename,salary,salary*12 as Annual from employee;
+
+	 WAQ to display per day salary of the employee
+         select ename,salary,salary/21 as Day_Salary from employee;
+
+
+
+
+
+
+
 
 
 
