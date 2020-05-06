@@ -131,6 +131,38 @@ Syntax : Select col_name as alias_name from table_name as alias_name;
 
 	 WAQ to display per day salary of the employee
          select ename,salary,salary/21 as Day_Salary from employee;
+========================================================================================
+
+	Distinct - Used to get the unique values from the column or table.
+ 	Syntax : Select DISTINCT col_name from Table_name;
+
+	ex: select distinct ename from employee; it removes the duplicate what ever column have duplicates
+
+	select distinct ename,deptno from employee; it removes the combination of column of duplicates 
+
+	Comparision ( =,>,<,>=,<=,!=,<>) after where condition col_name operator value 
+	
+	WAQ to display all the records of the employee who are working in the dept is equal to 10.
+	@ select * from employee where deptno=10;
+	
+	WAQ to display all the records of the employee whose salary is greater 20000;
+	@ select * from employee where salary>20000;
+
+	WAQ to display all the records of the employee whose salary greater than equal to 20000;
+	@ select * from employee where salary>=20000;
+
+	WAQ to display all the records of the employee whose salary less than 20000;
+	@ select * from employee where salary<20000;
+
+	WAQ to display all the records of the employee whose salary less than 20000;
+	@ select * from employee where salary<=20000;
+
+	WAQ to display all the records of the employee whose salaryis not equal 20000;
+	@ select * from employee where salary!=20000;
+
+	WAQ to display all the records of the employee whose salary is not equal 20000;
+	@ select * from employee where salary<>20000;
+========================================================================================================
 
 
 
