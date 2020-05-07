@@ -1,6 +1,6 @@
-======PostgrSQL======
+======PostgreSQL======
 
-1. Write a command to check the version of postgrSQL.
+1. Write a command to check the version of postgreSQL.
    select version(); 
 
 2. Write a command to get a list of all available databases.
@@ -140,7 +140,7 @@ Syntax : Select col_name as alias_name from table_name as alias_name;
 
 	select distinct ename,deptno from employee; it removes the combination of column of duplicates 
 
-	Comparision ( =,>,<,>=,<=,!=,<>) after where condition col_name operator value 
+	Comparision operator ( =,>,<,>=,<=,!=,<>) after where condition col_name operator value 
 	
 	WAQ to display all the records of the employee who are working in the dept is equal to 10.
 	@ select * from employee where deptno=10;
@@ -163,8 +163,33 @@ Syntax : Select col_name as alias_name from table_name as alias_name;
 	WAQ to display all the records of the employee whose salary is not equal 20000;
 	@ select * from employee where salary<>20000;
 ========================================================================================================
+	Logical operator : AND, OR, NOT
+	
+	AND : Syntax = Select col_name/* from table_name where condition 1 AND condition 2.
+	OR  : Syntax = Select col_name/* from table_name where conditon 1 OR condition 2.
+	NOT : Syntax = Select col_name/* from table_name where NOT condition.
 
+	WAQ to display all the records whose is working as hr and deptno 10. 
+	select * from employee where designation='HR' and deptno=10;
+	
+	WAQ to display all the records of the employee whose is working as salesman and hired after 2016
+	select * from employee where designation='salesman' and hiredate>'2016-12-31';
+	
+	WAQ to display all the records of the emp who is working as HR in deptno 10 & whose salary is 10000
+	select * from employee where designation='HR' and deptno=10 and salary>10000;
+	
+	WAQ to display all the records of the emp who is working in dept 10 or 20. 
+	select * from employee where deptno=10 or deptno=20;
 
+	WAQ to display name salary deptno who is working as tester or whose salary = 15000;
+	select ename,salary,deptno from employee where designation='Tester' or salary=15000;
+
+	WAQ to display all the records whose is working as tester as working in dept in 30 or working as clerk as well as whose sal>15000;
+	Select * from employee where (designation='Tester' and deptno=30) or (designation='clerk' and salary>15000);
+	
+	WAQ to display all the records who are not working in the deptno 20.
+	select * from employee where not deptno=20;
+=======================================================================================================	
 
 
 
