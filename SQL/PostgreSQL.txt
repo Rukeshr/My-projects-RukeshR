@@ -190,6 +190,34 @@ Syntax : Select col_name as alias_name from table_name as alias_name;
 	WAQ to display all the records who are not working in the deptno 20.
 	select * from employee where not deptno=20;
 =======================================================================================================	
+	
+	
+	LIKE : used for pattern matching
+	----
+	special character for pattern matching : % and _
+`	Syntax : Select * from table_name where col_name LIKE '%_';
+	
+	WAQ to display all the records of the employee whose name starts with R
+	@ select * from employee where ename like 'R%';	
+
+	WAQ to display all the records of the employee whose name having only 3 character.
+	@ select * from employee where ename like '___';
+
+	WAQ to display all the records of the employee name who have atleast 2 l in there names.
+	@ select * from employee where ename like '%l%l%';
+	
+	WAQ to display all the records of the employee whose name starts with s and end with c.
+	@ select * from employee where ename like 'S%p';
+	
+	WAQ to display all the records of the employee whose name length 5 and starts with s and l should be last 2nd character.
+	@ select * from employee where ename like 's__l_';
+
+	
+	WAQ to display all the records of the employee if the emp name begins with s or a ;
+	@ select * from employee where ename like 'a%' or ename like 'S%';
+
+	WAQ to display all the records of the employee excluding emp name begings with z and p.
+	@ select * from employee where ename not like 'z%' and ename not like 'p%';
 
 
 
