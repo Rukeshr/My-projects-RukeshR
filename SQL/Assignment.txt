@@ -1,0 +1,351 @@
+							Table Data
+
+ empid |   ename   |    designation    |  hiredate  | salary | age |        email        | deptno |   mobile   | mgr | location  | commision
+-------+-----------+-------------------+------------+--------+-----+---------------------+--------+------------+-----+-----------+-----------
+     1 | Rukeshr   | Softwaredeveloper | 2020-03-12 |  25000 |  22 | rukeshr16@gmail.com |     10 | 8880031699 |   2 | banglore  |     30000
+     3 | Yogesh    | Softwaredeveloper | 2019-12-22 |  20000 |  25 | Yogesh@gmail.com    |     20 | 9874521144 |   5 | Banglore  |     25000
+     2 | SumanthS  | Tester            | 2020-03-20 |  20000 |  22 | sumanth@gmail.com   |     10 | 9876543210 |   1 | delhi     |      5000
+     4 | Manjesh   | Tester            | 2019-07-02 |  20000 |  24 | manjesh@gmail.com   |     20 | 7676946747 |   3 | Banglore  |      5000
+     5 | Asha      | HR                | 2013-03-10 |  20000 |  28 | Asha@gmail.com      |     10 | 9876545544 |   6 | Pune      |
+     6 | kumar     | salesman          | 2015-07-02 |  20000 |  28 | kumar@gmail.com     |     20 | 7675146747 |   7 | Hyderabad |
+     7 | Venkatesh | salesman          | 2015-03-10 |  20000 |  31 | venkatesh@gmail.com |     20 | 9876548454 |   2 | Hyderabad |
+     8 | Praveen   | Tester            | 2019-07-02 |  20000 |  24 | praveen@gmail.com   |     30 | 7845146747 |   2 | mysore    |
+     9 | Raju      | clerk             | 2010-05-10 |  20000 |  35 | raju@gmail.com      |     40 | 9888845544 |  11 | pune      |
+    11 | abc       | software          | 2015-03-14 |  25000 |  24 | abc@gmail.com       |     10 | 1234567890 |   9 | mysore    |
+(10 rows)
+
+1) WAQ TO LIST ALL THE EMPLOYEES WHOSE SALARY IS NULL
+
+ 	select * from employee where salary is null;
+ Result: 
+	empid | ename | designation | hiredate | salary | age | email | deptno | mobile
+	-------+-------+-------------+----------+--------+-----+-------+--------+--------
+ 	(0 rows) 
+
+2) WAQ TO LIST ALL THE EMPLOYEES WHO DON’T HAVE A DEPT NO
+
+	select * from employee where deptno is null;
+ Result:
+ 	empid | ename | designation | hiredate | salary | age | email | deptno | mobile
+ 	-------+-------+-------------+----------+--------+-----+-------+--------+--------
+ 	(0 rows)
+
+3) WAQ TO LIST ALL THE SALESMEN IN DEPT 30
+ 
+	select * from employee where designation= 'Salesman' and deptno=30;
+ Result:
+ 	empid | ename | designation | hiredate | salary | age | email | deptno | mobile
+ 	-------+-------+-------------+----------+--------+-----+-------+--------+--------
+ 	(0 rows)
+
+4) WAQ TO LIST ALL THE SALESMEN IN DEPT NUMBER 30 AND HAVING SALARY GREATER THAN 1500
+
+ 	select * from employee where designation= 'Salesman' and deptno=30 and salary>1500;
+ Result:
+ 	empid | ename | designation | hiredate | salary | age | email | deptno | mobile
+ 	-------+-------+-------------+----------+--------+-----+-------+--------+--------
+ 	(0 rows)
+
+5) LIST ALL THE EMPLOYEES WHOSE NAME STARTS WITH ‘S’ OR ‘A’
+
+	select * from employee where ename like 'A%' or ename like 'S%';
+ Result:
+ 	empid |  ename   | designation |  hiredate  | salary | age |       email       | deptno |   mobile
+ 	-------+----------+-------------+------------+--------+-----+-------------------+--------+------------
+     	2 | SumanthS | Tester      | 2020-03-20 |  20000 |  22 | sumanth@gmail.com |     10 | 9876543210
+     	5 | Asha     | HR          | 2013-03-10 |  20000 |  28 | Asha@gmail.com    |     10 | 9876545544
+ 	(2 rows)
+
+6) LIST ALL THE EMPLOYEES EXCEPT THOSE WHO ARE WORKING IN DEPT 10 & 20.
+
+ 	select * from employee where deptno not in (10,20);
+ Result:
+ 	empid |  ename  | designation |  hiredate  | salary | age |       email       | deptno |   mobile
+ 	-------+---------+-------------+------------+--------+-----+-------------------+--------+------------
+     	8 | Praveen | Tester      | 2019-07-02 |  20000 |  24 | praveen@gmail.com |     30 | 7845146747
+     	9 | Raju    | clerk       | 2010-05-10 |  20000 |  35 | raju@gmail.com    |     40 | 9888845544
+ 	(2 rows) 
+
+7) LIST THE EMPLOYEES WHOSE NAME DOES NOT START WITH ‘S’
+
+ 	select * from employee where ename not like 'S%';
+ Result:
+ 	empid |   ename   |    designation    |  hiredate  | salary | age |        email        | deptno |   mobile
+	-------+-----------+-------------------+------------+--------+-----+---------------------+--------+------------
+     	3 | Yogesh    | Softwaredeveloper | 2019-12-22 |  20000 |  25 | Yogesh@gmail.com    |     20 | 9874521144
+     	4 | Manjesh   | Tester            | 2019-07-02 |  20000 |  24 | manjesh@gmail.com   |     20 | 7676946747
+     	5 | Asha      | HR                | 2013-03-10 |  20000 |  28 | Asha@gmail.com      |     10 | 9876545544
+     	6 | kumar     | salesman          | 2015-07-02 |  20000 |  28 | kumar@gmail.com     |     20 | 7675146747
+     	7 | Venkatesh | salesman          | 2015-03-10 |  20000 |  31 | venkatesh@gmail.com |     20 | 9876548454
+     	8 | Praveen   | Tester            | 2019-07-02 |  20000 |  24 | praveen@gmail.com   |     30 | 7845146747
+     	9 | Raju      | clerk             | 2010-05-10 |  20000 |  35 | raju@gmail.com      |     40 | 9888845544
+     	1 | Rukeshr   | Softwaredeveloper | 2020-03-12 |  25000 |  22 | rukeshr16@gmail.com |     10 | 8880031699
+       11 | abc       | software          | 2015-03-14 |  25000 |  24 | abc@gmail.com       |     10 | 1234567890
+ 	(9 rows)
+8) LIST ALL THE EMPLOYEES WHO ARE HAVING REPORTING MANAGERS IN DEPT 10
+
+ 	select * from employee where deptno=10 and mgr is not null;
+ Result:
+ 	empid |  ename   |    designation    |  hiredate  | salary | age |        email        | deptno |   mobile   | mgr
+	-------+----------+-------------------+------------+--------+-----+---------------------+--------+------------+-----
+     	1 | Rukeshr  | Softwaredeveloper | 2020-03-12 |  25000 |  22 | rukeshr16@gmail.com |     10 | 8880031699 |   2
+     	2 | SumanthS | Tester            | 2020-03-20 |  20000 |  22 | sumanth@gmail.com   |     10 | 9876543210 |   1
+     	5 | Asha     | HR                | 2013-03-10 |  20000 |  28 | Asha@gmail.com      |     10 | 9876545544 |   6
+    	11| abc      | software          | 2015-03-14 |  25000 |  24 | abc@gmail.com       |     10 | 1234567890 |   9
+	(4 rows)
+
+9) LIST ALL THE EMPLOYEES WHOSE SALARY IS NULL AND WORKING AS CLERK
+
+ 	select * from employee where salary is null and designation='clerk';
+ Result:
+ 	empid | ename | designation | hiredate | salary | age | email | deptno | mobile
+ 	-------+-------+-------------+----------+--------+-----+-------+--------+--------
+ 	(0 rows)
+
+10) LIST ALL THE EMPLOYEES WHO DON’T HAVE A REPORTING MANAGER IN DEPTNO 10 OR 30
+
+ 	select * from employee where mgr is null and deptno in (10,30);
+ Result:
+ 	empid | ename | designation | hiredate | salary | age | email | deptno | mobile | mgr
+	-------+-------+-------------+----------+--------+-----+-------+--------+--------+-----
+	(0 rows)
+	
+
+11) LIST ALL THE SALESMEN IN DEPT 30 WITH SAL MORE THAN 2450
+
+ 	select * from employee where designation='salesman' and deptno=30 and salary>2450; 
+ Result:
+ 	empid | ename | designation | hiredate | salary | age | email | deptno | mobile
+ 	-------+-------+-------------+----------+--------+-----+-------+--------+--------
+ 	(0 rows)
+
+12) LIST ALL THE HR IN DEPT NUMBER 20 AND HAVING SALARY GREATER THAN 2500 
+
+	select * from employee where designation = 'HR' and deptno=20 and salary >25000;
+ Result:
+ 	empid | ename | designation | hiredate | salary | age | email | deptno | mobile
+	-------+-------+-------------+----------+--------+-----+-------+--------+--------
+	(0 rows)
+
+13) LIST ALL THE EMPLOYEES WHOSE NAME STARTS WITH ‘M’ OR ‘J’
+
+ 	select * from employee where ename like 'M%' or ename like 'J%';
+ Result:
+ 	empid |  ename  | designation |  hiredate  | salary | age |       email       | deptno |   mobile
+	-------+---------+-------------+------------+--------+-----+-------------------+--------+------------
+     	4 | Manjesh | Tester      | 2019-07-02 |  20000 |  24 | manjesh@gmail.com |     20 | 7676946747
+	(1 row)
+
+14) LIST ALL THE EMPLOYEES WITH ANNUAL SALARY EXCEPT THOSE WHO ARE WORKING IN DEPT 30 
+
+ 	select *,salary*12 as annual from employee where deptno not in (30);
+ Result:
+ 	empid |   ename   |    designation    |  hiredate  | salary | age |        email        | deptno |   mobile   | annual -------+-----------+-------------------+------------+--------+-----+---------------------+--------+------------+--------     2 | SumanthS  | Tester            | 2020-03-20 |  20000 |  22 | sumanth@gmail.com   |     10 | 9876543210 | 240000
+     	3 | Yogesh    | Softwaredeveloper | 2019-12-22 |  20000 |  25 | Yogesh@gmail.com    |     20 | 9874521144 | 240000
+     	4 | Manjesh   | Tester            | 2019-07-02 |  20000 |  24 | manjesh@gmail.com   |     20 | 7676946747 | 240000
+     	5 | Asha      | HR                | 2013-03-10 |  20000 |  28 | Asha@gmail.com      |     10 | 9876545544 | 240000
+     	6 | kumar     | salesman          | 2015-07-02 |  20000 |  28 | kumar@gmail.com     |     20 | 7675146747 | 240000
+     	7 | Venkatesh | salesman          | 2015-03-10 |  20000 |  31 | venkatesh@gmail.com |     20 | 9876548454 | 240000
+     	9 | Raju      | clerk             | 2010-05-10 |  20000 |  35 | raju@gmail.com      |     40 | 9888845544 | 240000
+     	1 | Rukeshr   | Softwaredeveloper | 2020-03-12 |  25000 |  22 | rukeshr16@gmail.com |     10 | 8880031699 | 300000
+       11 | abc       | software          | 2015-03-14 |  25000 |  24 | abc@gmail.com       |     10 | 1234567890 | 300000
+ 	(9 rows)
+
+15) LIST THE EMPLOYEES WHOSE NAME DOES NOT END WITH ‘ES’ OR ‘R’
+ 	select * from employee where ename not like '%es' or ename not like '%r';
+ Result:
+ 	empid |   ename   |    designation    |  hiredate  | salary | age |        email        | deptno |   mobile
+       -------+-----------+-------------------+------------+--------+-----+---------------------+--------+------------
+     	2 | SumanthS  | Tester            | 2020-03-20 |  20000 |  22 | sumanth@gmail.com   |     10 | 9876543210
+     	3 | Yogesh    | Softwaredeveloper | 2019-12-22 |  20000 |  25 | Yogesh@gmail.com    |     20 | 9874521144
+     	4 | Manjesh   | Tester            | 2019-07-02 |  20000 |  24 | manjesh@gmail.com   |     20 | 7676946747
+     	5 | Asha      | HR                | 2013-03-10 |  20000 |  28 | Asha@gmail.com      |     10 | 9876545544
+     	6 | kumar     | salesman          | 2015-07-02 |  20000 |  28 | kumar@gmail.com     |     20 | 7675146747
+     	7 | Venkatesh | salesman          | 2015-03-10 |  20000 |  31 | venkatesh@gmail.com |     20 | 9876548454
+     	8 | Praveen   | Tester            | 2019-07-02 |  20000 |  24 | praveen@gmail.com   |     30 | 7845146747
+     	9 | Raju      | clerk             | 2010-05-10 |  20000 |  35 | raju@gmail.com      |     40 | 9888845544
+     	1 | Rukeshr   | Softwaredeveloper | 2020-03-12 |  25000 |  22 | rukeshr16@gmail.com |     10 | 8880031699
+       11 | abc       | software          | 2015-03-14 |  25000 |  24 | abc@gmail.com       |     10 | 1234567890
+	(10 rows)
+
+16) LIST ALL THE EMPLOYEES WHO ARE HAVING REPORTING MANAGERS IN DEPT 10 ALONG WITH 10% HIKE IN SALARY
+
+ 	select ename,salary,deptno,(salary+(Salary*10/100)) as Hike from employee where deptno=10 and mgr is not null;
+ Result:
+  	ename   | salary | deptno | hike
+	----------+--------+--------+-------
+ 	Rukeshr  |  25000 |     10 | 27500
+ 	SumanthS |  20000 |     10 | 22000
+ 	Asha     |  20000 |     10 | 22000
+ 	abc      |  25000 |     10 | 27500
+	(4 rows)
+
+17) DISPLAY ALL THE EMPLOYEE WHO ARE ‘SALESMAN’S HAVING ‘E’ AS THE LAST BUT ONE CHARACTER  IN ENAME BUT SALARY HAVING EXACTLY 4 CHARACTER
+
+ 	select * from employee where designation = 'salesman' and ename like '%e_' and cast(salary as varchar) like '____';
+ Result:
+ 	empid | ename | designation | hiredate | salary | age | email | deptno | mobile | mgr
+	-------+-------+-------------+----------+--------+-----+-------+--------+--------+-----
+	(0 rows)
+
+18) DISPLAY ALL THE EMPLOYEE WHO ARE JOINED AFTER YEAR 81
+
+	 select * from employee where hiredate > '1981-12-31';
+ Result:
+	 empid |   ename   |    designation    |  hiredate  | salary | age |        email        | deptno |   mobile
+	-------+-----------+-------------------+------------+--------+-----+---------------------+--------+------------
+     	2 | SumanthS  | Tester            | 2020-03-20 |  20000 |  22 | sumanth@gmail.com   |     10 | 9876543210
+     	3 | Yogesh    | Softwaredeveloper | 2019-12-22 |  20000 |  25 | Yogesh@gmail.com    |     20 | 9874521144
+     	4 | Manjesh   | Tester            | 2019-07-02 |  20000 |  24 | manjesh@gmail.com   |     20 | 7676946747
+     	5 | Asha      | HR                | 2013-03-10 |  20000 |  28 | Asha@gmail.com      |     10 | 9876545544
+     	6 | kumar     | salesman          | 2015-07-02 |  20000 |  28 | kumar@gmail.com     |     20 | 7675146747
+     	7 | Venkatesh | salesman          | 2015-03-10 |  20000 |  31 | venkatesh@gmail.com |     20 | 9876548454
+     	8 | Praveen   | Tester            | 2019-07-02 |  20000 |  24 | praveen@gmail.com   |     30 | 7845146747
+     	9 | Raju      | clerk             | 2010-05-10 |  20000 |  35 | raju@gmail.com      |     40 | 9888845544
+     	1 | Rukeshr   | Softwaredeveloper | 2020-03-12 |  25000 |  22 | rukeshr16@gmail.com |     10 | 8880031699
+       11 | abc       | software          | 2015-03-14 |  25000 |  24 | abc@gmail.com       |     10 | 1234567890
+	(10 rows)
+
+19) DISPLAY ALL THE EMPLOYEE WHO ARE JOINED IN MARCH
+
+ 	select * from employee where cast (hiredate as varchar)like'____-03-__';
+ Result:
+ 	empid |   ename   |    designation    |  hiredate  | salary | age |        email        | deptno |   mobile	
+	-------+-----------+-------------------+------------+--------+-----+---------------------+--------+------------
+     	2 | SumanthS  | Tester            | 2020-03-20 |  20000 |  22 | sumanth@gmail.com   |     10 | 9876543210
+     	5 | Asha      | HR                | 2013-03-10 |  20000 |  28 | Asha@gmail.com      |     10 | 9876545544
+     	7 | Venkatesh | salesman          | 2015-03-10 |  20000 |  31 | venkatesh@gmail.com |     20 | 9876548454
+     	1 | Rukeshr   | Softwaredeveloper | 2020-03-12 |  25000 |  22 | rukeshr16@gmail.com |     10 | 8880031699
+       11 | abc       | software          | 2015-03-14 |  25000 |  24 | abc@gmail.com       |     10 | 1234567890
+	(5 rows)
+
+20) LIST THE EMPLOYEES WHO ARE NOT WORKING AS MANAGERS AND CLERKS IN DEPT 10 AND 20 WITH A SALARY IN THE RANGE OF 1000 TO 3000
+
+ 	select * from employee where designation not in ('Clerk','Manager') and deptno not in(10,20) and salary between 10000 and 30000;
+ Result:
+	empid |  ename  | designation |  hiredate  | salary | age |       email       | deptno |   mobile
+	-------+---------+-------------+------------+--------+-----+-------------------+--------+------------
+     	8 | Praveen | Tester      | 2019-07-02 |  20000 |  24 | praveen@gmail.com |     30 | 7845146747
+     	9 | Raju    | clerk       | 2010-05-10 |  20000 |  35 | raju@gmail.com    |     40 | 9888845544
+	(2 rows)
+
+21) LIST THE EMPLOYEES WHOSE SALARY NOT IN THE RANGE OF 1000 TO 2000 AND WORKING IN DEPT 10,20 OR 30 EXCEPT ALL SALESMEN
+
+ 	select * from employee where (salary not between 1000 and 3000) and (deptno in (10,20,30)) and designation <>'salesman';
+ Result:
+ 	empid |  ename   |    designation    |  hiredate  | salary | age |        email        | deptno |   mobile
+	-------+----------+-------------------+------------+--------+-----+---------------------+--------+------------
+     	2 | SumanthS | Tester            | 2020-03-20 |  20000 |  22 | sumanth@gmail.com   |     10 | 9876543210
+     	3 | Yogesh   | Softwaredeveloper | 2019-12-22 |  20000 |  25 | Yogesh@gmail.com    |     20 | 9874521144
+     	4 | Manjesh  | Tester            | 2019-07-02 |  20000 |  24 | manjesh@gmail.com   |     20 | 7676946747
+     	5 | Asha     | HR                | 2013-03-10 |  20000 |  28 | Asha@gmail.com      |     10 | 9876545544
+     	8 | Praveen  | Tester            | 2019-07-02 |  20000 |  24 | praveen@gmail.com   |     30 | 7845146747
+     	1 | Rukeshr  | Softwaredeveloper | 2020-03-12 |  25000 |  22 | rukeshr16@gmail.com |     10 | 8880031699
+       11 | abc      | software          | 2015-03-14 |  25000 |  24 | abc@gmail.com       |     10 | 1234567890
+	(7 rows)
+
+22) LIST THE DEPARTMENT NAMES WHICH ARE HAVING LETTER ‘O’ IN THEIR LOCATIONS AS WELL AS THEIR DEPARTMENT NAMES.
+	
+ 	select designation,location from employee where designation like '%o%' and location like '%o%';
+ Result:
+    	designation    | location
+	-------------------+----------
+ 	Softwaredeveloper | banglore
+ 	Softwaredeveloper | Banglore
+ 	software          | mysore
+	(3 rows)
+
+
+23) DISPLAY ALL THE EMPLOYEES WHOSE JOB HAS STRING ‘MAN’ IN IT.
+
+ 	select * from employee where ename like '%man%';
+ Result:
+ 	empid |  ename   | designation |  hiredate  | salary | age |       email       | deptno |   mobile
+	-------+----------+-------------+------------+--------+-----+-------------------+--------+------------
+     	2 | SumanthS | Tester      | 2020-03-20 |  20000 |  22 | sumanth@gmail.com |     10 | 9876543210
+	(1 row)
+
+
+24)LIST THE EMPLOYEES WHO ARE HIRED AFTER 82 AND BEFORE 87.
+
+	select * from employee where hiredate between '1981-12-31' and '1986-12-31';
+ Result:
+ 	empid | ename | designation | hiredate | salary | age | email | deptno | mobile
+ 	-------+-------+-------------+----------+--------+-----+-------+--------+--------
+ 	(0 rows)
+
+25)WAQTD ALL THE DETAILS OF EMPLOYEES HIRED IN NOVEMBER AND DECEMBER.
+
+ 	select * from employee where cast(hiredate as varchar) like '____-12-__' or cast(hiredate as varchar) like '____-11-__';
+ Result: 
+	empid | ename  |    designation    |  hiredate  | salary | age |      email       | deptno |   mobile   | mgr | location
+	-------+--------+-------------------+------------+--------+-----+------------------+--------+------------+-----+----------
+     	3 | Yogesh | Softwaredeveloper | 2019-12-22 |  20000 |  25 | Yogesh@gmail.com |     20 | 9874521144 |   5 | Banglore
+	(1 row)
+
+26)LIST ALL THE EMPLOYEE NAMES AND COMISSION FOR THOSE EMPLOYEES WHO EARN COMISSION MORE THAN THEIR SALARY
+
+	 select ename,commision  from employee where commision > salary;
+ Result:
+  	ename  | commision
+	---------+-----------
+ 	Rukeshr |     30000
+ 	Yogesh  |     25000
+	(2 rows)
+
+27)WAQTD NAME AND DESIGNATION FOR ALL THE EMPLOYEES HAVING REPORTING MANAGERS AND ALSO THRIE NAMES STARTING WITH ‘S’
+
+ 	select ename,designation from employee where mgr is not null and ename like 'S%';
+ Result:
+  	ename   | designation
+	----------+-------------
+ 	SumanthS | Tester
+	(1 row)
+
+28)WAQTD NAME AND SALARY OF ALL THE EMPLOYEES IF THEIR ANNUAL SALARY ENDS WITH ‘0’.
+
+ 	select ename,salary,salary*12 as annual from employee where cast(salary as varchar) like '%0';
+ Result:
+   	ename   | salary | annual
+	-----------+--------+--------
+ 	SumanthS  |  20000 | 240000
+	Yogesh    |  20000 | 240000
+ 	Manjesh   |  20000 | 240000
+ 	Asha      |  20000 | 240000
+ 	kumar     |  20000 | 240000
+ 	Venkatesh |  20000 | 240000
+ 	Praveen   |  20000 | 240000
+ 	Raju      |  20000 | 240000
+ 	Rukeshr   |  25000 | 300000
+ 	abc       |  25000 | 300000
+	(10 rows)
+
+29)WAQTD NAME OF THE EMPLOYEE HAVING ATLEAST 2L’s IN HIS NAME.
+
+ 	select * from employee where ename like '%l%l%';
+ Result:
+ 	empid | ename | designation | hiredate | salary | age | email | deptno | mobile
+	-------+-------+-------------+----------+--------+-----+-------+--------+--------
+	(0 rows)
+
+30)WAQTD NAME OF THE EMPLOYEES WHOS NAME STARTS WITH A ‘VOWEL’
+
+ 	select * from employee where ename like ('A%') or  ename like ('E%') or ename like ('I%') or ename like ('O%') or ename like ('U%');
+ Result:
+ 	empid | ename | designation |  hiredate  | salary | age |     email      | deptno |   mobile
+	-------+-------+-------------+------------+--------+-----+----------------+--------+------------
+     	5 | Asha  | HR          | 2013-03-10 |  20000 |  28 | Asha@gmail.com |     10 | 9876545544
+	(1 row)
+
+
+	
+
+
+
+
+
+
+
+
+
+
