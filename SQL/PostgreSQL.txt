@@ -219,6 +219,86 @@ Syntax : Select col_name as alias_name from table_name as alias_name;
 	WAQ to display all the records of the employee excluding emp name begings with z and p.
 	@ select * from employee where ename not like 'z%' and ename not like 'p%';
 
+====================================================================================================================
+
+	Function : Perfroms a specific task
+	
+	Two categories : 
+	Aggregate function (multi row function) : Giving 'n' input to the function and getting only 'one' output.
+ 	Scalar function (Single row function) : Giving 'n'/'per' input to the function and getting only 'n'/'per' outputs.
+	
+	Aggregate inbulit function :
+	AVG() : Returns average value
+	Syntax : Select avg(col_name) from table_name;
+	         ex : select avg(Salary) from employee; 
+
+	COUNT() : it counts the number of rows
+	Syntax :  Select count(col_name) from table_name;
+		  ex: select count(*) from employee; 
+		
+	MAX() : returns maxium value of selected column.
+		Syntax : select max(col_name) from table_name;
+		ex: select max(salary) from employee;
+
+	MIN() : returns minimum value of selected column.
+		syntax : select min(col_name) from table_name;
+		Ex : select min(salary) from employee;
+
+	SUM() : returns sum of all the values of the selected column
+	        syntax : select sum(col_name) from table_name;
+		Ex : select sum(salary) from employee;
+=========================================================================
+	
+	Order by clause : Used to sort the result in ascending or desending 
+	
+	Syntax : select col_name, * from table_name order by col_name ASC|DESC; By default : ASC
+	
+	NOTE : Executes after select clause 
+	       Order by should be written in the last of the query
+	       Group by clause is used in order by cluase we can multi row function only for the col_name or expression which is used in order by clause.
+	
+	WAQTDAR of the employee salary should be desending order
+	@ select * from employee order by salary DESC;
+	
+	WAQ to display all the detail of the employee and sort the record in asending order of hiredate if there are one employee hired on the same date then highest salary should be shown first 
+	@  select * from employee order by hiredate asc,salary desc;
+
+	WAQ to name of the emp salary annaul and sort the record in asending of the annual salary
+	@ select ename,salary,salary*12 annual from employee order by annual desc;
+	
+	WAQ name designation of the all the emp either of the dept 10 20 40  and sort the record in asc by their salary
+	@ select ename,designation,salary from employee where deptno in (10,20,40) order by salary asc;
+
+==============================================================================================================================
+
+	Group by clause : Often used with aggregate function 
+	---------------
+		
+	Syntax : select col_names from table_nae where condition group by col_name;
+		
+	WAQTD no of count of the employee working in each department
+	select count(*) from employee group by deptno; 
+
+	NOTE : Executes row by row
+	       After the execution of group by clause the record are grouped, therfore all the clause whuch executes after the group by clause it will execute grouo by group. 
+
+	WAQTD highest salary in each deptno
+	select count(*),deptno from employee group by deptno;
+
+ 	WAQ to display no of tester working in each department;
+	select count(*),deptno from employee where designation='Tester' group by deptno;
+
+	Having clause 
+	-------------
+	
+	Note : If i have to filter the record after the group by the we have to use having clause.
+
+	Syntax : Select */Col_name from table_name where (row _filter_condition) group by col_name having (group_filter_condition);
+	Executes after the group by clause 
+	
+	WAQTD  dept no which have atleast 2 clerk working  
+	select deptno from employee where designation='clerk' group by deptno having count(*)>=2;
+
 
 
 
