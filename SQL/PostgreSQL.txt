@@ -299,6 +299,19 @@ Syntax : Select col_name as alias_name from table_name as alias_name;
 	WAQTD  dept no which have atleast 2 clerk working  
 	select deptno from employee where designation='clerk' group by deptno having count(*)>=2;
 
+==================================================================================================================================
+	
+	WAQTD deptno which has total salary > 10000 in each department no 
+	select deptno from employee group deptno having sum(salary);
+
+	WAQTD deotno which has atleast two employee hired in a same date.	
+	select deptno from employee group by hiredate,deptno having count(*)>=2;
+
+	WAQTD deptno and avg salary of the all the employee whose avg salary is > 15000 by excluding the employee whose names begins with R
+	select deptno,avg(salary) from employee where ename like not like ('R%') group by avg(salary) > 15000;
+
+	Subqueries :
+
 
 
 
