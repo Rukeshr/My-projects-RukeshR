@@ -309,8 +309,25 @@ Syntax : Select col_name as alias_name from table_name as alias_name;
 
 	WAQTD deptno and avg salary of the all the employee whose avg salary is > 15000 by excluding the employee whose names begins with R
 	select deptno,avg(salary) from employee where ename like not like ('R%') group by avg(salary) > 15000;
+	
+	Subqueries : Query written inside the another query is called as sub query
+	Syntax : Select * from tab_name where col_name operator (select */col_name from tab_name where condition)
+		         (Outer query) 		                                   (Inner query) 
+								     (Query written inside the parenthysis)
 
-	Subqueries :
+	Sub query is divided into 2 types : 
+	* Single-row Subquery
+	* Multi-row Subquery
+
+	Single-row subquery 
+	Inner Query returns a single record (comparison operator) 
+
+	Syntax: Select * from tab_name where col_name OPERATOR (select * from tab_name where expr = value);
+ 	
+	Multi-row subquery 
+	Inner query returns one or more records (special operator only = in, all, any)
+
+	Syntax :Select * from tab_name where col_name OPERATOR (select * from tab_name where expr = value);
 
 
 
