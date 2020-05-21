@@ -328,6 +328,42 @@ Syntax : Select col_name as alias_name from table_name as alias_name;
 	Inner query returns one or more records (special operator only = in, all, any)
 
 	Syntax :Select * from tab_name where col_name OPERATOR (select * from tab_name where expr = value);
+	
+	Syntax :Select * from tab_name where col_name OPERATOR (select * from tab_name where expr = value);
+
+	WAQTD name of the all the employee who were hired after Rukesh
+	select * from employee where hiredate > (select hiredate from employee where ename like 'Rukeshr');
+
+	WAQTD to display name of the all emp who is working for research dept
+	select ename from employee where deptno = (select dno from dept_info where dname='research');
+
+	WAQ to display name of the emp whose in working in the location which has atleast one "A"
+	sselect ename from employee where deptno in (select dno from dept_info where location like '%a%');
+
+	WAQ to display second maximum salary
+	select max(salary) from employee where salary < (Select max(salary) from employee);
+
+	WAQ to display deptname which has atleast 2 clerk
+	select dname from dept_info where dno in (select deptno from employee where designation='Clerk' group by deptno having count(*)>=2);
+
+	WAQ to display 3rd max salary
+	select max(Salary) from employee where salary<(select max(Salary) from employee where salary<(select max(Salary) from employee)); 
+	
+	WAQ name of the emp who hired after rukesh and their salary > Yogesh 
+	select ename from employee where hiredate < (select hiredate from employee where ename='Rukeshr') and salary > (select salary from employee where ename='Yogesh');
+
+===================================================================================================================================================================================
+	
+	Joins : Used to fetch the data from two or more tables.
+	
+	Minimum 2 tables are required for joins 
+	
+	Types of JOINS :
+	Cross join
+	Inner join
+	Outer join
+	Self join
+	Natural join
 
 
 
