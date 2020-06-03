@@ -455,14 +455,162 @@ Syntax : Select col_name as alias_name from table_name as alias_name;
 	
 	Properties : ACID 
 
- 	Atomicity : the either the entire transaction takes place at once or doesn’t happen at all.
+ 	Atomicity : The entire transaction takes place at once or doesn’t happen at all.
 	Consistency : This means that integrity constraints must be maintained so that the database is consistent before and after the transaction.
 	Isolation : This property ensures that multiple transactions can occur concurrently without leading to the inconsistency of database state.
 	Durability : This property ensures that once the transaction has completed execution, the updates and modifications to the database are stored in and written to disk and they persist even if a system failure occurs. 
 	
+	Atomicity
+	All changes to data are performed as if they are a single operation. That is, all the changes are performed, or none of them are.
+	For example, in an application that transfers funds from one account to another, the atomicity property ensures that, if a debit is made successfully from one account, the corresponding credit is made to the other account.
+	
+	Consistency
+	Data is in a consistent state when a transaction starts and when it ends.
+	For example, in an application that transfers funds from one account to another, the consistency property ensures that the total value of funds in both the accounts is the same at the start and end of each transaction.
+	
+	Isolation
+	The intermediate state of a transaction is invisible to other transactions. As a result, transactions that run concurrently appear to be serialized.
+	For example, in an application that transfers funds from one account to another, the isolation property ensures that another transaction sees the transferred funds in one account or the other, but not in both, nor in neither.
+	
+	Durability
+	After a transaction successfully completes, changes to data persist and are not undone, even in the event of a system failure.
+	For example, in an application that transfers funds from one account to another, the durability property ensures that the changes made to each account will not be reversed.
+
 	Commit : The COMMIT command is the transactional command used to save changes invoked by a transaction to the database. The COMMIT command saves all the transactions to the database since the last COMMIT or ROLLBACK command.
 	Rollback : The ROLLBACK command is the transactional command used to undo transactions that have not already been saved to the database. This command can only be used to undo transactions since the last COMMIT or ROLLBACK command was issued.
-	Savepoint
+	
+	idexcel_db=# Begin;
+	BEGIN
+	idexcel_db=# select * from dept_info;
+	 dno |    dname    | location
+	-----+-------------+----------
+ 	  10 | Development | Banglore
+ 	  20 | Testing     | Banglore
+  	  30 | HR          | Delhi
+ 	  40 | Admin       | Mysore
+ 	  50 | Sales       | Pune
+ 	  60 | research    | Gurugram
+	 (6 rows)
+
+
+	idexcel_db=# insert into dept_info values (70,'RND','Banglore');
+	INSERT 0 1
+	idexcel_db=# select * from dept_info;
+	 dno |    dname    | location
+	-----+-------------+----------
+	  10 | Development | Banglore
+	  20 | Testing     | Banglore
+ 	  30 | HR          | Delhi
+	  40 | Admin       | Mysore
+  	  50 | Sales       | Pune
+	  60 | research    | Gurugram
+	  70 | RND         | Banglore
+	(7 rows)
+
+
+	idexcel_db=# rollback;
+	ROLLBACK
+	idexcel_db=# select * from dept_info;
+	 dno |    dname    | location
+	-----+-------------+----------
+	  10 | Development | Banglore
+	  20 | Testing     | Banglore
+	  30 | HR          | Delhi
+	  40 | Admin       | Mysore
+	  50 | Sales       | Pune
+	  60 | research    | Gurugram
+	(6 rows)
+
+	idexcel_db=# commit;
+	WARNING:  there is no transaction in progress
+	COMMIT.
+
+======================================================================================================================
+	
+	Savepoint : 
+	
+	idexcel_db=# begin;
+	BEGIN
+	idexcel_db=# insert into dept_info values (70,'RND','Banglore');
+	INSERT 0 1
+	idexcel_db=# select * from dept_info;
+ 	dno |    dname    | location
+	-----+-------------+----------
+  	10 | Development | Banglore
+  	20 | Testing     | Banglore
+  	30 | HR          | Delhi
+  	40 | Admin       | Mysore
+  	50 | Sales       | Pune
+  	60 | research    | Gurugram
+  	70 | RND         | Banglore
+	(7 rows)
+
+
+	idexcel_db=# savepoint test;
+	SAVEPOINT
+	idexcel_db=# delete from dept_info where dno=70;
+	DELETE 1
+	idexcel_db=# delete from dept_info where dno=60;
+	DELETE 1
+	idexcel_db=# rollback to savepoint test;
+	ROLLBACK
+	idexcel_db=# select * from dept_info;
+ 	dno |    dname    | location
+	-----+-------------+----------
+	10 | Development | Banglore
+  	20 | Testing     | Banglore
+	30 | HR          | Delhi
+ 	40 | Admin       | Mysore
+  	50 | Sales       | Pune
+  	60 | research    | Gurugram
+  	70 | RND         | Banglore
+	(7 rows)
+
+
+	idexcel_db=# commit;
+	COMMIT.
+
+	Normalization : 
+
+	 Keys :
+
+	 Key attribute : KA helps us to identify a records Uniquely present in the table
+	 Non key attribute : Helps us to identify Apart from key attributes in the record present in the table  
+	 Prime key attribute : A primary key is a column in a table whose values uniquely identify the rows in the table.
+	 Non prime attribute : Apart from a primary key is a column in a table whose values not uniquely identify the rows in the table.
+	 Composite key attribute : Combination of 2 or more attribute which used to identify record in the record. 
+	 super key : A single attribute or a set of attributes that can uniquely identify all attributes of a particular relation is called Super key
+	 foriegn key : Helps us to establish the relationship between two tables
+
+	Functional dependency : A functional dependency (FD) is a relationship between two attributes, typically between the PK and other non-key attributes within a table.
+
+	Realtionship between attributes of a table helps us to prevent in data retendency and anomoly
+
+	Types of Functional dependency : 
+	
+	1. Total Functional Dependency 
+	If all attribute of a relation a determined by a key attribute called as TFD	
+	R--> ABCD 
+	A --> B
+	A --> C
+	A --> D
+
+	A is the key attribute 
+	(BCD) dependent on A 
+
+	2. Partial Functional Dependency
+	R--> ABCD 
+	AB --> C
+	A --> C
+	A --> D
+	
+	AB is a composite key 
+
+	A realtion is to said to have partial FD if 
+	1. It consitis a composite key attribute 
+	2. there exsists a dependency such that an attribute can be determined by another attribute whcih is part of composite key attribute 
+		
+	3. Transitive FD 
 
 
 
