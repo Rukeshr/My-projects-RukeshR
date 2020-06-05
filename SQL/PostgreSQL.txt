@@ -610,7 +610,40 @@ Syntax : Select col_name as alias_name from table_name as alias_name;
 	1. It consitis a composite key attribute 
 	2. there exsists a dependency such that an attribute can be determined by another attribute whcih is part of composite key attribute 
 		
-	3. Transitive FD 
+	3. Transitive FD : A relation is set to be transitive dependency if 
+	1. there exist an relation such that is determine by a non key attribute  which intern determined by a key attribute. 
+	R --> ABCD
+	A --> B
+	A --> D
+	D --> C
+	A --> C
+
+	Normalization : The process of the decompusing the table into smaller tables in order to remove reduncency and anomalies by identifying the dependencies is kanoe as Normalization
+
+	The process of reducing the table into its normal form is known as 'Normalization'
+	
+	Normal forms : 	
+	1NF 
+	2NF
+	3NF
+	BCF Boyce codd NF
+	4NF
+	[Tables ae siad to be noralized if it is reduced till 3NF]
+
+	1NF :
+	It need to satisfy below conditions :
+	1. table should dont have duplicate rows
+	2. every cell should be single value 
+
+	2NF :
+	It need to satisfy below conditions :
+	1. Table should be in 1NF
+	2. Table should not have partial FD (Should not have coposite key)
+
+	3NF :
+	It need to satisfy below conditions :
+	1. Table should be in 2NF
+	2. Table should not have transitive FD
 
 
 
