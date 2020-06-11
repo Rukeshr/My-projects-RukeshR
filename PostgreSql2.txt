@@ -1,0 +1,76 @@
+Function : Similar to stored procedure (set of of sql and procedural statements)
+
+Syntax : Create function fun_name (Parameter)
+	 returns return_datatype
+	 as $$
+	 declare declaration;
+	 begin 
+ 	 <function body>
+	 return { Variable / Value };
+	 end;
+	 $$
+	 language SQL/plpgsql;
+
+Without Parameter
+
+idexcel_db=# create function total_function()
+idexcel_db-# returns integer as $$
+idexcel_db$# declare noofrow integer;
+idexcel_db$# begin
+idexcel_db$# select count(*) into noofrow from employee;
+idexcel_db$# return noofrow;
+idexcel_db$# end;
+idexcel_db$# $$
+idexcel_db-# language plpgsql;
+CREATE FUNCTION
+
+idexcel_db=# \df
+                             List of functions
+ Schema |      Name      | Result data type | Argument data types |  Type
+--------+----------------+------------------+---------------------+--------
+ public | total_function | integer          |                     | normal
+(1 row)
+
+To call the function
+
+idexcel_db=# select total_function();
+ total_function
+----------------
+             10
+(1 row)
+
+With parameter
+
+idexcel_db=# create function total_function(a integer,b integer, c integer, OUT max integer, OUT min integer)
+idexcel_db-# as $$
+idexcel_db$# begin
+idexcel_db$# max=greatest(a,b,c);
+idexcel_db$# min=least(a,b,c);
+idexcel_db$# end;
+idexcel_db$# $$
+idexcel_db-# language plpgsql;
+CREATE FUNCTION
+
+idexcel_db=# create function myinsert(_pid integer,_name varchar(100),_subject1 integer,_subject2 integer,_subject3 integer)
+idexcel_db-# returns void as
+idexcel_db-# $$
+idexcel_db$# begin
+idexcel_db$# insert into person(pid,name,subject1,subject2,subject3) values (_pid,_name,_subject1,_subject2,_subject3);
+idexcel_db$# end;
+idexcel_db$# $$
+idexcel_db-# language plpgsql;
+CREATE FUNCTION
+idexcel_db=# select myinsert(1,'Rukesh',11,22,33);
+ myinsert
+----------
+
+(1 row)
+
+
+idexcel_db=# select * from person;
+ pid |  name  | subject1 | subject2 | subject3
+-----+--------+----------+----------+----------
+   1 | Rukesh |       11 |       22 |       33
+(1 row)
+
+

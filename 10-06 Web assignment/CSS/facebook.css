@@ -1,0 +1,42 @@
+body{
+    background-color: rgb(232, 239, 241); 
+}
+.container-fluid{
+    width: 400px;
+     
+}
+.facebook .left {
+    width: 800px;
+  }
+.card{
+    padding:18px;
+}
+.button{
+    padding-left: 30%;
+}
+
+.left{
+    margin-top: 179px;
+    padding-left: 275px;
+}
+.left h1{
+    font-size:55px;
+    font-weight: bolder;
+    color: rgb(51, 113, 207);
+}
+.facebook .right {
+    width: 520px;
+    margin-top: -200px;
+    margin-left: 800px;
+  }
+
+.bottom{
+    font-size: 13px;
+    font-weight: light;
+    padding-left: 15%;
+    padding-right: 14%;
+    padding-bottom: 15px;
+    background-color: white;
+    color:  rgb(58, 118, 207);
+}
+

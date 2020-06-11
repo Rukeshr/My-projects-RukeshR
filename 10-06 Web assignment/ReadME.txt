@@ -1,0 +1,1 @@
+Please open the HTML pages using Live server.
