@@ -1,1 +1,1 @@
-Please open the HTML pages using Live server.
+Please open the HTML pages in Live server.
