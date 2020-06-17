@@ -1,0 +1,23 @@
+--------JavaScript-------- 
+
+JS -->  It is a Scripting language 
+	Makes webpage Dynamic, Used to validate at the front end part
+	Runs at client side (Browser)
+	Case sensitivity
+
+History :  
+	NetScape (Browser) approched Brendon Eich in 1995 to develop a scripting language. 	
+	Names : Mocha --> Live script --> JavaScript
+
+	ECMA - "European Computers Manufacturers Association" Standard for scripting language
+	ECMA Script --> ES1 1997
+	Latest Version (ES7 2017)
+
+	"Mozilla Developers Networks" maintains JS Documentation 
+
+Advantages :
+	1. Less Server interaction
+	2. Better performance 
+	3. Rich in interface
+	4. More interactive
+	
