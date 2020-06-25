@@ -20,4 +20,256 @@ Advantages :
 	2. Better performance 
 	3. Rich in interface
 	4. More interactive
+
+JS Engines --> 
+	Chrome - V8
+	firefox - SpiderMonkey
+	Explorer - Chakra 
+	Safari - JScore
+	Opera - v8 - carakan
+	
+	V8 --> 
+	* Multi threaded programme written in c++
+	* Converts to Binary code
+	
+	Threads in V8 Engine :
+	----------------------
+	Fullcodegen => It consumes entire JS code and compiles just before execution
+		      Just in time Complier
+	
+	Crankshaft => Monitors the code being compiled for hot segment.
+
+	Main thread => Fetches the entire code -> Compiles it -> it will execute
+
+	Compiler thread => Combination of fullcodegen and Crankshaft 
+
+	Profiler thread => It monitors the entire code
+
+	GC thread => Garbage collector thread
+
+	Ways of adding JS to HTML page
+	--------------------------------
+	1. Inline JS => It will be applied for one particular element / tag.
+	2. Internal JS => It will be applied for one page.
+	3. External JS => It is for multiple page.
+
+	Bag       --- Books
+	Container --- data 
+
+	Variable  --- Data
+	Container --- data
+
+	Var identifier(variable_name);
+	Var Variable_name = value;
+
+	Data Type : Defines the type of the data
+	Rules : 1. Identifier must begin with a-z or A-Z or _ (UnderScore) or $ (Dollar)
+		2. It can contain numbers (Alpha numeric)
+		3. It is a case sensitive 
+
+	Data Types :
+	Primitive		Referenced/ Non primitive
+	---------		-------------------------
+	Number			Array
+	String			Object
+	Null			Date
+	Boolean			Math
+	Undefined 		Func
+
+	String : Using " " , ' ' , ` `
+	Null : Using the null keyword.
+	Boolean : only True and false keyword.
+	Undefined : Only declaration of variable.
+
+	Array : Collection of data
+		Data can be both Homogenous or hetergenous 
+
+	Types of Array declartion : 
+			    0,1,2,3
+	1. Var arrayName = [1,2,3,4];
+	
+	2. Var arrayName = new Array(10,20,30,40);
+
+	Object : Entity which has states and behaviour 
+	
+	Syntax : {
+	key:value,
+	key2:value2
+	}
+	Example : 	
+	Employee --> Id	
+		     Name
+		     Designation
+		     MgrID
+		     Mobile
+		     Adress
+	
+		{
+		id:10,
+		name:'AAA',
+		designation:'software_Developer',
+		Mobile:987456321,
+		Address:'Banglore',
+		mgrID:{
+			id:10,
+			name:'Rukesh',
+			designation:'software_Developer',
+			Mobile:965985321,
+			Address:'Banglore'
+		      }
+		}
+
+	Statement : Something that yeilds result
+
+	Operands : 2 Types : 1) Variables		
+			     2) Literals --> Direct values 
+					     Numbers or String type of value
+	Operators : which has specify functionality
+   
+	Operator types : 
+	1) Arithmatic Operator 	    --> + - * / % ++ -- 
+	2) Comparision / Relational --> == != > < >= <=  === !==
+	3) Logical
+	4) Ternary
+	5) TypeOf
+
+	Uses of console window : 1) We can log the message 
+				 2) We can the check the erorrs 
+				 3) We can run the JS code
+
+	Pre increment 			Post increment 
+ 	Var a = 10;         		var b = 10;
+	++a;				b++;
+
+	Order of execution :
+	Pre increment			Post increment
+	1) Value incremented 		Substitute the Value 	
+	2) Substitute the value 	Operation
+	3) Operation			Value incremented
+
+	Comparision Operator : 
+	== != > < >= <=  === !==
+	
+	Output => Boolean
+
+	Logical operator :  
+	When we have to compare more than once then we will go with logical operators
+	AND, OR, NOT
+
+	Ternary operator : 
+	Syntax : (Condition)? (condition)? trueStatement : falseStatement) : falseStatement
+
+	TypeOf operator : 
+	Which tells the type of the data 
+	Number : Number
+	String : String
+	Null : Object 
+	Undefined : Undefined 
+	
+	Array : Object
+	Object : Object
+
+	Template literals : Used for evaluated string.
+			    Template literals works with only back ticks
+	    
+	Syntax : `My name is ${Var_name}`;
+
+	Functions : Set of code which performs some dedicated task or functionality.
+	Types of Function : 1) Named function 
+			    2) Function expression / Annonymous function 
+			    3) Immediately invoked function expression 
+		 	    4) Fat arrow function 
+	
+	Named function 
+			Syntax : function funName(arguments){
+					//Statements
+					
+				  }
+				  Fun_name();
+	
+	Function Expression 
+			Syntax : var funExp = function(arguments){
+					//statements 
+				  }
+				  funExp();
+	
+	Immediately invoked function expression  
+			Syntax : (function(arguments){
+				      //statements
+				  }) 
+				  ();
+
+	Fat arrow function 
+			Syntax : var fatArr = () => {
+					//statements 
+				  }
+	Input Arguments : All primitive data types  and Array, objects, function and 
+			  Multiple argumnets we can pass
+	Return type : All primitive data types  and Array, objects, function and 
+		      no multiple arguments but we can pass through Array or object
+
+	Date : To operate the date
+	       1) New Date() --> To get the current date 
+	       2) New Date (Year, Month, day, hours, min, sec, milisec)
+	       3) New Date (miliseconds)
+	       4) New Date (Date String) "Month_name day, year time (HH:MM:SS)
+
+	Date Inbuilt methods :
+	--------------------
+	getFullYear()    --> get the year as four digit number (YYYY)
+	getMonth()       --> get the month as number (0-11)
+	getDate()        --> get the day as a number(1-31)
+	getHours()       --> get the hour (0-23)
+	getMinutes()     --> get the minute (0-59)
+	getSeconds()     --> get the second (0-59)
+	getMiliSeconds() --> get the miliseconds (0-999)
+	getDay()	 --> get the weekday as a number (0-6)
+	Date.now()	 --> get the time ES5.
+
+	Math object :
+	math.pi		--> returns pi value
+	math.round(X)	--> returns the value of X rounded to its nearest integer.
+	math.pow(X,Y)	--> returns the value of X to the power of Y.
+	math.sqrt(X) 	--> returns the square of X
+	math.abs(X)	--> returns the absolute(positive) value of X	
+	math.ceil(X) 	--> returns the value of X rounded up to its nearest integer.
+	math.floor(X)	--> returns the value of X rounded down to its nearest integer.
+	math.min() & math.max() --> returns the lowest and highest values.
+	math.random() 	--> returns the random numbers between (0 to 1) Excluding 0 and 1.
+
+	Control Statements : 
+	------------------
+	1) if : 
+		Syntax : if(Condition){
+			   //statements will execute when condition is true;
+			  }
+
+	2) else : 
+		Syntax : if(Condition){
+			   //statements will execute when condition is true;
+			  }else{
+			   //statements will execute when condition is false;
+			  }
+	3) else if : 
+		Syntax : if(Condition1){
+			   //statements will execute when condition is true;
+			  }else if(Condition2){
+			   //statements will execute when condition is true;
+			  }else{
+			   //statements will execute when condition is false;
+			  }
+
+	4) Switch : 
+		Syntax : Switch(expression){
+			 case a : //code block
+			 break;
+			 case b : //code block
+			 break;
+				
+			 
+			 default: //code block
+			 }
+
+	
+
 	
