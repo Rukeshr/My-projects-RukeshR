@@ -1,4 +1,4 @@
-Function : Similar to stored procedure (set of of sql and procedural statements)
+Function : Similar to stored procedure (set of sql and procedural statements)
 
 Syntax : Create function fun_name (Parameter)
 	 returns return_datatype

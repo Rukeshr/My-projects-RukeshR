@@ -104,7 +104,7 @@
     delete from employee where empid=12;
 
     Expression : Consists of operators and operands
- 	     is a statement which gives results
+ 	         is a statement which gives results
     operands : 1> Column_name
 	       2> Literals
 alias 
@@ -239,7 +239,7 @@ Syntax : Select col_name as alias_name from table_name as alias_name;
 	MAX() : returns maxium value of selected column.
 		Syntax : select max(col_name) from table_name;
 		ex: select max(salary) from employee;
-
+-
 	MIN() : returns minimum value of selected column.
 		syntax : select min(col_name) from table_name;
 		Ex : select min(salary) from employee;
