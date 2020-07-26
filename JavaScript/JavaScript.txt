@@ -457,7 +457,49 @@ JS Engines -->
 	The DOM represents a document with a logical tree.
 	The Document Object Model (DOM) is a programming interface for HTML and XML documents, 
 	which can be modified with a scripting language such as JavaScript.
+	
+	Methods : 
+		
+	Write() : Writes one or more HTML expressions to a document in the specified window.
+		  document.write('Hello world');
 
+	createElement(element/Tag name) : The name of an element. Creates an instance of the element for the specified tag. 
+			  document.createElement("BUTTON");
+
+	getElementById(id_name) : String that specifies the ID value. Case-insensitive. 
+				  Returns a reference to the first object with the specified value of the ID or NAME attribute.
+				  document.getElementById('demo');
+	
+	 getElementsByTagName(tag_name) : Retrieves a collection of objects based on the specified element name.
+					  document.getElementsByTagName('p');
+
+	getElementsByClassName(class_name) : Returns a HTMLCollection of the elements in the object on which the method was invoked 
+					     (a document or an element) that have all the classes given by classNames.
+      					     The classNames argument is interpreted as a space-separated list of classes.
+					     document.getElementsByClassName('demo');
+
+	querySelector(tag or id or class) : Returns the first element that is a descendant of node that matches selectors.
+					    document.querySelector();
+
+	querySelectorAll(tag or id or class) : Returns all element descendants of node that match selectors.
+					       document.querySelectorAll();
+		
+	appendChild(element) : It will append the specified element name.
+
+	
+	JSON :  JavaScript Object Notation
+	
+	JSON is a lightweight data interchange format
+	JSON is language independent *
+	JSON is "self-describing" and easy to understand.
+
+	{
+	  "employees":[
+	  {"firstName":"John", "lastName":"Doe"},
+	  {"firstName":"Anna", "lastName":"Smith"},
+	  {"firstName":"Peter", "lastName":"Jones"}
+	]
+	}
 	
 
 	
