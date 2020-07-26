@@ -500,6 +500,77 @@ JS Engines -->
 	  {"firstName":"Peter", "lastName":"Jones"}
 	]
 	}
+
+	JSON Data Types :
+	In JSON, values must be one of the following data types
+		a string, a number, an object, an array, a boolean, null
+	JSON values cannot be one of the following data types:
+		a function, a date, undefined
+
+	JSON stringify() : The JSON.stringify() method converts JavaScript objects into strings.
+			   When sending data to a web server the data has to be a string.
+
+	Ex : 
+	var obj = { "name":"John", "age":30, "city":"New York"};
+	var myJSON = JSON.stringify(obj);
+	document.getElementById("demo").innerHTML = myJSON;
+
+	JSON parse() : The JSON.parse() method parses a string and returns a JavaScript object.
+ 		       The string has to be written in JSON format	
+		       The JSON.parse() method can optionally transform the result with a function.
+	Ex : 
+	var obj = JSON.parse('{"firstName":"John", "lastName":"Doe"}');
+
+	ES6 features : 
+	
+	var 
+	 var declarations are globally scoped or function/locally scoped.
+	 The scope is global when a var variable is declared outside a function. 
+	 This means that any variable that is declared with var outside a function block is available for use in the whole window.
+	 var is function scoped when it is declared within a function. 
+	 This means that it is available and can be accessed only within that function.
+	
+	Let 
+	 A block is a chunk of code bounded by {}. 
+	 A block lives in curly braces. Anything within curly braces is a block.
+	 So a variable declared in a block with let  is only available for use within that block.
+
+	Const 
+	 Variables declared with the const maintain constant values. const declarations share some similarities with let declarations.
+	 const declarations are block scoped
+	 Like let declarations, const declarations can only be accessed within the block they were declared.
+	 const cannot be updated or re-declared
+	 This means that the value of a variable declared with const remains the same within its scope. 
+	 It cannot be updated or re-declared.
+
+	Object and Array De-structuring.	
+	The destructuring assignment syntax is a JavaScript expression that makes it possible to unpack values from arrays, 
+	or properties from objects, into distinct variables.
+	
+	let a, b, rest;
+	[a, b] = [10, 20];
+
+	console.log(a);
+	// expected output: 10
+
+	console.log(b);
+	// expected output: 20
+
+	[a, b, ...rest] = [10, 20, 30, 40, 50];
+
+	console.log(rest);
+	// expected output: Array [30,40,50]
+	
+	Object de-structuring
+	const user = {
+    	id: 42,
+    	is_verified: true
+	};
+
+	const {id, is_verified} = user;
+
+	console.log(id); // 42
+	console.log(is_verified); // true
 	
 
 	
