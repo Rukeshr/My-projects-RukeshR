@@ -11,7 +11,7 @@ History :
 
 	ECMA - "European Computers Manufacturers Association" Standard for scripting language
 	ECMA Script --> ES1 1997
-	Latest Version (ES7 2017)
+	Latest Version (ES13 2022)
 
 	"Mozilla Developers Networks" maintains JS Documentation 
 
