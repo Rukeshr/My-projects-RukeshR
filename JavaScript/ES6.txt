@@ -5,3 +5,19 @@ KEYWORD	SCOPE	                  REDECLARATION & REASSIGNMENT	HOISTING
 var	    Global, Local	          yes & yes	                    yes, with default value
 let   	Global, Local,  Block	  no & yes	                    yes, without default value
 const	  Global, Local,  Block	  no & no	                      yes, without default value
+
+Arrow Functions : anonymous functions
+const myFunc = () => {
+  const myVar = "value";
+  return myVar;
+}
+
+Arrow Functions with Parameters : Just like a regular function, you can pass arguments into an arrow function
+
+ex : const doubler = (item) => item * 2;
+doubler(4); 
+
+If an arrow function has a single parameter, the parentheses enclosing the parameter may be omitted.
+ex : const doubler = item => item * 2;
+
+Rest Parameter with Function Parameters :  With the rest parameter, you can create functions that take a variable number of arguments. These arguments are stored in an array that can be accessed later from inside the function.
