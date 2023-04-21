@@ -65,3 +65,8 @@ let matStr = "mat";
 let bgRegex = /[a-e]at/;
 matStr.match(bgRegex);
 
+Match Numbers and Letters of the Alphabet : hyphen (-) to match a range of characters is not limited to letters. It also works to match a range of numbers.
+
+ex : let jennyStr = "Jenny8675309";
+let myRegex = /[a-z0-9]/ig;
+jennyStr.match(myRegex);
