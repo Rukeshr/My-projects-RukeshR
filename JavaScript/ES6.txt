@@ -29,3 +29,39 @@ A Promise is in one of these states:
 pending: initial state, neither fulfilled nor rejected.
 fulfilled: meaning that the operation was completed successfully.
 rejected: meaning that the operation failed.
+
+Regular expression : Are used to create match parts of string. test() method takes the regex, applies it to a string (which is placed inside the parentheses), and returns true or false if your pattern finds something or not.
+ex : let testStr = "freeCodeCamp";
+let testRegex = /Code/; // Case Sensitive
+testRegex.test(testStr);
+
+ search for multiple patterns using the alternation or OR operator: |
+
+Ignore Case While Matching : /regex/i; i is the ignore case
+
+extract the actual matches you found with the .match() method.
+
+To search or extract a pattern more than once, you can use the global search flag: g.
+
+let repeatRegex = /Repeat/g;
+testStr.match(repeatRegex);
+
+You can have multiple flags on your regex like /search/gi 
+
+Match Anything with Wildcard Period : 
+ex : let hugStr = "Bear hug";
+let huRegex = /hu./;
+huRegex.test(hugStr);
+
+Returns true / false
+
+Match Single Character with Multiple Possibilities
+let bogStr = "bog";
+let bgRegex = /b[aiu]g/;
+bogStr.match(bgRegex);
+
+Match Letters of the Alphabet : you can define a range of characters to match using a hyphen character: -.
+let matStr = "mat";
+let bgRegex = /[a-e]at/;
+matStr.match(bgRegex);
+
