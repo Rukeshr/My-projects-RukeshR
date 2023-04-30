@@ -95,3 +95,9 @@ return arra1.slice(0);
 document.write(array_Clone([1, 2, 4, 0])); 
 document.write(array_Clone([1, 2, [4, 0]]));
 
+//JavaScript program to join all elements of the following array into a string.
+
+myColor = ["Red", "Green", "White", "Black"]; 
+document.write(myColor.toString()); 
+document.write(myColor.join()); 
+document.write(myColor.join('+'));
