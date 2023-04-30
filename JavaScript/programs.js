@@ -86,3 +86,12 @@ cmas.setFullYear(cmas.getFullYear()+1);
 var one_day=1000*60*60*24; 
 document.write(Math.ceil((cmas.getTime()-today.getTime())/(one_day))+ 
 " days left until Christmas!");
+
+// JavaScript function to clone an array
+
+array_Clone = function(arra1) { 
+return arra1.slice(0); 
+}; 
+document.write(array_Clone([1, 2, 4, 0])); 
+document.write(array_Clone([1, 2, [4, 0]]));
+
