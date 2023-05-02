@@ -1,4 +1,6 @@
+ES6 is an acronym of ECMAScript 6 and also known as ECMAScript 2015
 
+ECMAScript6 is a scripting language specification which is standardized by ECMAScript International. It is used by the applications to enable client-side scripting
 Scopes of the var, let and const Keywords : 
 
 KEYWORD	SCOPE	                  REDECLARATION & REASSIGNMENT	HOISTING
